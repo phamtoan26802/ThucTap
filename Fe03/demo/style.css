@@ -1,0 +1,27 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar styles */
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    background-color: white;
+  }
+  
+ .navbar a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+  }
+  
+ .navbar img {
+    max-width: 100px; /* Điều chỉnh kích thước ảnh nếu cần */
+  }
