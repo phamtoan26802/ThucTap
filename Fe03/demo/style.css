@@ -6,7 +6,7 @@
   }
   
   /* Navbar styles */
-  .navbar{
+  .partner{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,13 +15,27 @@
     background-color: white;
   }
   
- .navbar a {
+ .partner a {
     margin: 0 10px;
     text-decoration: none;
     color: #333;
     display: inline-block;
   }
   
- .navbar img {
+ .partner img {
     max-width: 100px; /* Điều chỉnh kích thước ảnh nếu cần */
+  }
+
+  .container {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  @keyframes movePartner {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }

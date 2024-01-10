@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <h3>Simple Calculator</h3>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    <label>Num 1</label>
+                    <input id="num1" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Num 2</label>
+                    <input id="num2" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Result:</label>
+                    <input type="text" id="result" />
+                </td>
+            </tr>
+        </table>
+        <button id="add">+</button>
+        <button id="subtract">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">/</button>
+    </form>
+
+    <Script>
+        // Lấy reference đến các phần tử trên trang web
+        var firstNumberInput = document.getElementById('num1');
+        var secondNumberInput = document.getElementById('num2');
+        var addButton = document.getElementById('add');
+        var subtractButton = document.getElementById('subtract');
+        var multiplyButton = document.getElementById('multiply');
+        var divideButton = document.getElementById('divide');
+        var resultDisplay = document.getElementById('result');
+
+        // Thêm sự kiện click cho nút cộng
+        addButton.addEventListener('click', function () {
+            // Thực hiện phép cộng
+            var sum = parseInt(firstNumberInput.value) + parseInt(secondNumberInput.value);
+            resultDisplay.value = sum;
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của button
+            return false; // Ngăn chặn hành vi mặc định của form (nếu có)
+        });
+
+        // Thêm sự kiện click cho nút trừ
+        subtractButton.addEventListener('click', function () {
+            // Thực hiện phép trừ
+            var difference = parseInt(firstNumberInput.value) - parseInt(secondNumberInput.value);
+            resultDisplay.value = difference;
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của button
+            return false; // Ngăn chặn hành vi mặc định của form (nếu có)
+        });
+
+        // Thêm sự kiện click cho nút nhân
+        multiplyButton.addEventListener('click', function () {
+            // Thực hiện phép nhân
+            var product = parseInt(firstNumberInput.value) * parseInt(secondNumberInput.value);
+            resultDisplay.value = product;
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của button
+            return false; // Ngăn chặn hành vi mặc định của form (nếu có)
+        });
+
+        // Thêm sự kiện click cho nút chia
+        divideButton.addEventListener('click', function () {
+            // Thực hiện phép chia
+            var quotient = parseInt(firstNumberInput.value) / parseInt(secondNumberInput.value);
+            resultDisplay.value = quotient;
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của button
+            return false; // Ngăn chặn hành vi mặc định của form (nếu có)
+        });
+    </Script>
+</body>
+
+</html>

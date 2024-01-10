@@ -1,16 +1,17 @@
-let navbar = document.getElementById('myNavbar');
+let container = document.querySelector('.container');
+let partner = document.getElementById('myPartner');
 let amountToMove = 0;
 
-function moveNavbar() {
+function movePartner() {
   amountToMove -= 1;
-  navbar.style.transform = 'translateX(' + amountToMove + 'px)';
+  partner.style.transform = 'translateX(' + amountToMove + 'px)';
   
   // Nếu muốn lặp lại chuyển động
-  if (amountToMove <= -navbar.scrollWidth) {
-    amountToMove = navbar.clientWidth;
+  if (amountToMove <= -partner.scrollWidth) {
+    amountToMove = partner.clientWidth;
   }
 
-  requestAnimationFrame(moveNavbar);
+  requestAnimationFrame(movePartner);
 }
 
-moveNavbar();
+movePartner();

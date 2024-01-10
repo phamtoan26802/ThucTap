@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPTB2</title>
+</head>
+
+<body>
+    <h3>giải pt bậc 2</h3>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    <label>A = </label>
+                    <input id="a" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>B = </label>
+                    <input id="b" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>C = </label>
+                    <input id="c" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <button id="calcu">giải pt</button>
+            </tr>
+            <hr>
+            <h3>giải</h3>
+            <tr>
+                <td>
+                    <label>Delta = </label>
+                    <input type="text" id="delta" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>X1 = </label>
+                    <input type="text" id="x1" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>X2 = </label>
+                    <input type="text" id="x2" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+        // Lấy reference đến các label
+        var aInput = document.getElementById('a');
+        var bInput = document.getElementById('b');
+        var cInput = document.getElementById('c');
+        var deltaLabel = document.getElementById('delta');
+        var x1Label = document.getElementById('x1');
+        var x2Label = document.getElementById('x2');
+        var calculateButton = document.getElementById('calcu');  // Phần này cũng cần thêm id vào button
+
+        // Thêm sự kiện click cho nút tính toán
+        calculateButton.addEventListener('click', function () {
+            // Lấy giá trị của a, b, c từ input và chuyển sang kiểu số
+            var a = parseFloat(aInput.value);
+            var b = parseFloat(bInput.value);
+            var c = parseFloat(cInput.value);
+
+            // Tính delta
+            var delta = b * b - 4 * a * c;
+
+            // Tính nghiệm
+            var x1, x2;
+            if (delta > 0) {
+                x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                deltaLabel.value = delta;  // Sử dụng .value thay vì .innerText
+                x1Label.value = x1;        // Sử dụng .value thay vì .innerText
+                x2Label.value = x2;        // Sử dụng .value thay vì .innerText
+            } else if (delta === 0) {
+                x1 = -b / (2 * a);
+                deltaLabel.value = delta;  // Sử dụng .value thay vì .innerText
+                x1Label.value = x1;        // Sử dụng .value thay vì .innerText
+                x2Label.value = '';         // Sử dụng .value thay vì .innerText
+            } else {
+                deltaLabel.value = delta;  // Sử dụng .value thay vì .innerText
+                x1Label.value = 'Phương trình không có nghiệm thực';  // Sử dụng .value thay vì .innerText
+                x2Label.value = '';         // Sử dụng .value thay vì .innerText
+            }
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của button
+            return false; // Ngăn chặn hành vi mặc định của form (nếu có)
+        });
+    </script>
+</body>
+
+</html>

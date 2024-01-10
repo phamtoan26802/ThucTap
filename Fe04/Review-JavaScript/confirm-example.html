@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Dialog Box</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>
+        Click to Confirm
+    </button>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("button").click(function () {
+                // Sử dụng hàm prompt để nhập số từ người dùng
+                let userInput = prompt("How many Chucks Berry songs do you have?");
+
+                // Chuyển đổi giá trị nhập vào thành kiểu số
+                let number = parseFloat(userInput);
+                // Kiểm tra nếu người dùng đã nhập một số hợp lệ
+                if (!isNaN(number)) {
+                    // Hiển thị số đã nhập trong một cửa sổ alert
+                    alert("I have: " + number + " songs ");
+                } else {
+                    // Hiển thị thông báo nếu người dùng không nhập một số hợp lệ
+                    alert("Bạn đã nhập không phải là một số hợp lệ");
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
