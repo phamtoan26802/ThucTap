@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: white;
+}
+/* Đặt logo ở trái */
+.navbar-brand {
+    margin-right: 2rem;
+}
+
+/* Các list-item và ô tìm kiếm ở giữa */
+.navbar-nav,
+.search-bar {
+    margin: auto;
+}
+/*-----------------------------------------------------------*/
+.nav-item{
+    padding: 1rem;
+}
+
+.nav-link{
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+/*--------------------------------------------------------------*/
+.icon-grid {
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-row {
+
+    display: flex;
+    padding: 90px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-container img {
+    width: 120px;
+    /* Thay đổi kích thước icon tùy theo yêu cầu */
+    transition: all 0.3s ease;
+}
+.product img{
+    width: 100%;
+}
+
+/*-----------------------------------------------------------*/
+
+.buy input{
+   height: 40px;
+   width: 700px;
+   border: 2px solid rgb(190, 232, 111);
+}
+.buy button{
+    height: 40px;
+    width: 150px;
+    color: black;
+    background-color: rgb(190, 232, 111);
+    border: none;
+}
+
+.footer-grid {
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-row {
+    background-image:url(./images/footer.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
